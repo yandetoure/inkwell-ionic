@@ -1,0 +1,7 @@
+{
+  "name": "Inkwell-mobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
