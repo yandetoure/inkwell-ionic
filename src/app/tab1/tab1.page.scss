@@ -1,0 +1,7 @@
+  .book-cover {
+    width: 100%; /* Prend toute la largeur disponible */
+    height: 150px; /* Hauteur fixe pour uniformiser les tailles */
+    object-fit: cover; /* Conserve le rapport d'aspect et remplit la boîte */
+    border-radius: 8px; /* Arrondir légèrement les coins */
+  }
+  

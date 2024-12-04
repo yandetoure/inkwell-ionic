@@ -1,0 +1,26 @@
+.cover-image-container {
+    text-align: center;
+    margin: 10px 0;
+  }
+  
+  .cover-image {
+    max-width: 50%;
+    height: auto;
+    border-radius: 8px; // Arrondir les coins de l'image
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); // Ajouter une ombre pour le style
+  }
+
+  h1{
+    font-size: 20px;
+    color: #08554c;
+  }
+
+  p{
+    font-size: 16px;
+    color: #8c8c8c;
+    margin-bottom: 20px;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-family: 'Courier New', Courier, monospace;
+  }

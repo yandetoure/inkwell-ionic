@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/books"></ion-back-button>
+    </ion-buttons>  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="book"  class="cover-image-container">
+    <img *ngIf="book?.cover" [src]="book.cover"class="cover-image"  />
+    <h1>{{ book.title }}</h1>
+    
+    <p>{{ book.description }}</p>
+  </div>
+
+
+</ion-content>

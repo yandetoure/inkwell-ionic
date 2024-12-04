@@ -21,14 +21,22 @@ export class LoginPage {
 
   login() {
     this.authService.login(this.email, this.password).subscribe(
-      async (response) => {
+      async (response: any) => {
         console.log('Réponse API:', response);
-        if (response.token) {
-          localStorage.setItem('token', response.token);
-          this.router.navigate(['tabs/tab2']);
+  
+        // Vérifiez si le token est présent
+        if (response.access_token) {
+          // Stockez le token (dans un service ou localStorage)
+          this.authService.setToken(response.access_token);
+  
+          // Redirigez l'utilisateur
+          this.router.navigateByUrl('/tabs/tab1').then(() => {
+            console.log('Navigation réussie vers /tabs/tab1');
+          });
         } else {
+          // Affichez un message d'erreur
           const toast = await this.toastController.create({
-            message: response.message,
+            message: 'Erreur : Aucun token reçu.',
             duration: 2000,
             color: 'danger',
           });
@@ -36,13 +44,17 @@ export class LoginPage {
         }
       },
       async (error) => {
+        console.error('Erreur lors de la connexion:', error);
+  
+        // Affichez une notification d'erreur
         const toast = await this.toastController.create({
-          message: 'Erreur de connexion',
+          message: 'Erreur de connexion. Vérifiez vos identifiants.',
           duration: 2000,
           color: 'danger',
         });
         toast.present();
       }
     );
-  }
+  }  
+  
 }
